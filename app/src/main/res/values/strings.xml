@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MovieReview</string>
+    <string name="open_rating">REVIEW MOVIE</string>
+    <string name="rate_movie">RATE THIS MOVIE</string>
+    <string name="director">Director:</string>
+    <string name="actors">Actors:</string>
+    <string name="genre">Genre:</string>
+    <string name="plot">Plot:</string>
+    <string name="comments">Comments(%1$s)</string>
+    <string name="stars">%1$s (Stars(%2$s)</string>
 </resources>

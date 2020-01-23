@@ -10,24 +10,10 @@
 
         android:width="3dp"
 
-        android:color="#696868"/>
+        android:color="#660000"/>
 
     <!-- corner radius-->
 
-    <corners
 
-        android:radius="10dp"/>
-
-    <!--paddings-->
-
-    <padding
-
-        android:left="15dp"
-
-        android:top="5dp"
-
-        android:right="15dp"
-
-        android:bottom="5dp"/>
 
 </shape>

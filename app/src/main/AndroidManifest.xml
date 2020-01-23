@@ -11,14 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".QuitApp"></activity>
         <activity
             android:name=".MovieRatingActivity"
-            android:parentActivityName=".MovieDetailActivity"/>
+            android:parentActivityName=".MovieDetailActivity" />
         <activity
             android:name=".MovieDetailActivity"
-            android:parentActivityName=".MainActivity"
-            android:launchMode="singleTop"/>
-        <activity android:name=".MainActivity">
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,6 +32,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        
+
     </application>
 
 </manifest>

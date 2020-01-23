@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FilmBewertung</string>
+    <string name="open_rating">FILM BEWERTEN</string>
+    <string name="rate_movie">DIESEN FILM BEWERTEN</string>
+    <string name="director">Regisseur:</string>
+    <string name="actors">Schauspieler:</string>
+    <string name="genre">Genre:</string>
+    <string name="plot">Handlung:</string>
+    <string name="comments">Kommentare(%1$s)</string>
+    <string name="stars">%1$s (%2$s Sterne)\n\n</string>
+</resources>

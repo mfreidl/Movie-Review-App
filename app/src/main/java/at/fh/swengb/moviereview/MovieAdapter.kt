@@ -1,17 +1,20 @@
-package at.fh.swengb.moviereview//freidl
-
+package at.fh.swengb.moviereview
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_movie.view.*
-import java.math.RoundingMode
-import android.graphics.Bitmap
+import com.bumptech.glide.Glide
+
 
 class MovieAdapter(val clickListener: (movie: Movie) -> Unit): RecyclerView.Adapter<MovieViewHolder>() {
 
     private var movieList = listOf<Movie>()
+
+    companion object{
+        var pos :Int = 0
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): MovieViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -20,12 +23,14 @@ class MovieAdapter(val clickListener: (movie: Movie) -> Unit): RecyclerView.Adap
 
     }
 
+
+
     override fun getItemCount(): Int {
         return movieList.count()
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        var movie = movieList.get(position)
+        var movie = movieList[position]
         holder.bindItem(movie)
     }
 
@@ -33,20 +38,25 @@ class MovieAdapter(val clickListener: (movie: Movie) -> Unit): RecyclerView.Adap
         movieList = newList
         notifyDataSetChanged()
     }
+
+    fun updateRating (newList : List<Movie>){
+        movieList = newList
+        notifyItemChanged(pos)
+    }
 }
+
 
 class MovieViewHolder(itemView: View, val clickListener: (movie: Movie) -> Unit): RecyclerView.ViewHolder(itemView) {
     fun bindItem(movie: Movie) {
-        itemView.item_movie_title.text = movie.title
-        itemView.item_movie_date.text = movie.release
-        itemView.item_movie_actor1.text = movie.actors.elementAt(0).name
-        itemView.item_movie_actor2.text = movie.actors.elementAt(1).name
-        itemView.item_movie_avg_rating_bar.rating = movie.ratingAverage().toFloat()
-        itemView.item_movie_avg_rating_value.text = movie.ratingAverage().toBigDecimal().setScale(2, RoundingMode.CEILING).toString()
-        itemView.item_movie_avg_rating_count.text = movie.reviews.count().toString()
-        itemView.image_view.setImageResource(movie.image)
+        itemView.item_title.text = movie.title
+        Glide
+            .with(itemView)
+            .load(movie.posterImagePath)
+            .into(itemView.item_poster)
         itemView.setOnClickListener {
+            MovieAdapter.pos = adapterPosition
             clickListener(movie)
         }
+        itemView.item_movie_avg_rating_bar.rating = movie.ratingAverage().toFloat()
     }
 }

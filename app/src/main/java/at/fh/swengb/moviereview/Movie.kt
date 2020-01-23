@@ -1,16 +1,15 @@
-package at.fh.swengb.moviereview//freidl
+package at.fh.swengb.moviereview
 
-class Movie(
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+open class Movie(
     val id :String,
     val title : String,
     val release : String,
-    val plot : String,
-    val genre : MovieGenre,
-    val actors : List<Person>,
-    val director : Person,
-    val reviews : MutableList<Review>,
-    val image : Int,
-    val youtubeId : String
+    val posterImagePath : String,
+    val backdropImagePath :String,
+    var reviews : MutableList<Review>
 ) {
     fun ratingAverage() : Double{
         var average = reviews.map { it.reviewValue }.average()
@@ -21,3 +20,5 @@ class Movie(
         return average
     }
 }
+
+

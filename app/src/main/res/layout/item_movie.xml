@@ -1,88 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
-    android:orientation="vertical"
-    android:background="@drawable/border">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="6dp"
+    android:layout_margin="1dp"
+    android:elevation="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/item_poster"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/item_movie_title"
-            android:layout_width="328dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/bevan"
-            android:text="test"
-            android:textColor="#3F51B5" />
-
-        <TextView
-            android:id="@+id/item_movie_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#3F51B5" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/item_movie_actor1"
-        android:layout_width="163dp"
         android:layout_height="wrap_content"
-        android:textColor="#3F51B5" />
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:visibility="visible"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/item_movie_actor2"
-        android:layout_width="163dp"
-        android:layout_height="30dp"
-        android:textColor="#3F51B5" />
-
-    <LinearLayout
+        android:id="@+id/item_title"
+        style="@style/font"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center|center_vertical"
+        android:adjustViewBounds="true"
+        android:background="#991b1c1b"
+        android:gravity="center|center_horizontal"
+        android:paddingBottom="5dp"
+        android:text="TextView"
+        android:textColor="#BBFFFFFF"
+        android:textIsSelectable="true" />
 
-        <RatingBar
-            android:id="@+id/item_movie_avg_rating_bar"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <RatingBar
+        android:id="@+id/item_movie_avg_rating_bar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="3dp"
+        android:paddingLeft="3dp"
+        android:theme="@style/RatingBar"
+        android:gravity="center_horizontal|center_vertical" />
 
-        <TextView
-            android:id="@+id/item_movie_avg_rating_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textColor="#3F51B5" />
+</androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/item_movie_avg_rating_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#3F51B5" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/image_view"
-            android:layout_width="match_parent"
-            android:layout_height="173dp"
-            android:src="@drawable/joker" />
-
-    </LinearLayout>
-
-</LinearLayout>
