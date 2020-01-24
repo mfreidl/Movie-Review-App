@@ -49,8 +49,8 @@ class MovieRatingActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when(item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
             R.id.logout -> {
                 val newIntent = Intent(this, QuitApp::class.java)
                 newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)

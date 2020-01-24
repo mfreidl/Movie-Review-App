@@ -49,9 +49,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        movie_recycler_view.layoutManager = GridLayoutManager(this, 3) as RecyclerView.LayoutManager?
+        movie_recycler_view.layoutManager = GridLayoutManager(this, 3)
         movie_recycler_view.adapter = movieAdapter
-        SleepyAsyncTask().execute()
         updateList()
     }
 
